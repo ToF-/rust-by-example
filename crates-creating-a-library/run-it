@@ -1,0 +1,6 @@
+#!/bin/bash
+# Where library.rlib is the path to the compiled library, assumed that it's
+# in the same directory here:
+rustc src/main.rs --extern rary=library.rlib && ./main
+
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+rustc --crate-type=lib src/rary.rs
+ls lib*
+
