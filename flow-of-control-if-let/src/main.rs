@@ -9,6 +9,10 @@ enum Foo {
     Qux(u32)
 }
 
+// This enum purposely neither implements nor derives PartialEq.
+// That is why comparing Foo::Bar == a fails below.
+enum Qux {Bar}
+
 fn main() {
     match some_number() {
         // Got `Some` variant, match if its value, bound to `n`,
@@ -76,5 +80,14 @@ fn main() {
     // Binding also works with `if let`
     if let Foo::Qux(value @ 100) = c {
         println!("c is one hundred");
+    }
+
+    let a = Qux::Bar;
+
+    // Variable a matches Qux::Bar
+    //if Qux::Bar == a {
+    // ^-- this causes a compile-time error. Use `if let` instead.
+    if let Qux::Bar = a {
+        println!("a is foobar");
     }
 }
