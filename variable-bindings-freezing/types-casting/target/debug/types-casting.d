@@ -1,0 +1,1 @@
+/Users/christophethibaut/Coding/rust-by-example/variable-bindings-freezing/types-casting/target/debug/types-casting: /Users/christophethibaut/Coding/rust-by-example/variable-bindings-freezing/types-casting/src/main.rs
